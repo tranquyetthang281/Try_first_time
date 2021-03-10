@@ -11,7 +11,6 @@ namespace ClubSoftware.ViewModel
     {
         public MainViewModel()
         {
-            MessageBox.Show("Hello");
         }
     }
 }

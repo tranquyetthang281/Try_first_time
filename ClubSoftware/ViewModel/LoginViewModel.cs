@@ -8,5 +8,6 @@ namespace ClubSoftware.ViewModel
 {
     class LoginViewModel : BaseViewModel
     {
+        
     }
 }

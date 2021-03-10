@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:ClubSoftware"
         mc:Ignorable="d"
         Title="LoginWindow"
-        Height="450"
-        Width="800"
+        Height="500"
+        Width="350"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
@@ -17,7 +17,44 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         DataContext="{StaticResource MainViewModel}">
-    <Grid>
-
+    <Grid Background="Silver" >
+        <Rectangle Height="280" VerticalAlignment="Top">
+            <Rectangle.Fill>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF064B69" Offset="0.994"/>
+                    <GradientStop Color="#FF16C9E2" Offset="0.051"/>
+                </LinearGradientBrush>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="img\logoteam.png" Width="144" Height="76" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="102,50,98,0"></Image>
+        <Rectangle Width="280" Height="240" Fill="White" VerticalAlignment="Bottom" Margin="0, 70" RadiusX="10" RadiusY="10">
+            <Rectangle.Effect>
+                <DropShadowEffect Color="#FFBBBBBB" Direction="0" BlurRadius="15" RenderingBias="Quality" ShadowDepth="1"/>
+            </Rectangle.Effect>
+        </Rectangle>
+        <Grid Height="240" Width="280" VerticalAlignment="Bottom" Margin="0,70">
+            <TextBlock Text="DEV CLUB" FontWeight="ExtraBold" HorizontalAlignment="Center" FontSize="25" Margin="79,25,76,187" Foreground="#FF064E6C" Width="125"/>
+            <StackPanel VerticalAlignment="Center" Margin="15">
+                <TextBox x:Name="TextBox_UserName"
+                  materialDesign:HintAssist.Hint="Tên đăng nhập"
+                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+                  VerticalAlignment="Center" 
+                  FontSize="16"/>
+                <PasswordBox x:Name="PasswordBox_Pass"
+                  materialDesign:HintAssist.Hint="Mật khẩu"
+                  Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
+                  VerticalAlignment="Center" 
+                  FontSize="16"
+                  />
+            </StackPanel>
+            <Button
+                  Click="Button_Click"
+                  Style="{StaticResource MaterialDesignRaisedButton}"
+                  Width="100"
+                  VerticalAlignment="Bottom"
+                  Margin="20"
+                  ToolTip="Resource name: MaterialDesignRaisedButton"
+                  Content="Login" Background="#FF1F73CE" />
+        </Grid>
     </Grid>
 </Window>
