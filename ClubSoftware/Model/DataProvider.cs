@@ -11,9 +11,11 @@ namespace ClubSoftware.Model
         private static DataProvider _ins;
         public static DataProvider Ins { get { if (_ins == null) _ins = new DataProvider(); return _ins; } set { _ins = value; } }
 
-        //public ClubSoftwareEntities DB { get; set; }
+        public LoginDataEntities DB { get; set; }
 
-
-
+        void foo()
+        {
+            //Ins.DB.UserInfoes.Where()
+        }
     }
 }
