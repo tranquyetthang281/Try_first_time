@@ -25,8 +25,8 @@
         <Grid Grid.Column="0" Height="620" VerticalAlignment="Top">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFC3CBDC" Offset="0.013"/>
-                    <GradientStop Color="#FF002988" Offset="1"/>
+                    <GradientStop Color="#FF155E83" Offset="0"/>
+                    <GradientStop Color="#FFC0D7E4" Offset="1"/>
                 </LinearGradientBrush>
             </Grid.Background>
 
@@ -51,27 +51,27 @@
                 <Button x:Name="Button_Info" Style="{DynamicResource MaterialDesignRaisedButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth2"
                         Click= "Button_Info_Click"
-                        Height="45" Background="#FF007ACC" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
+                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
                     <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="AccountCircle" Height="25" Width="25" VerticalAlignment="Center" />
+                        <materialDesign:PackIcon Kind="AccountCircle" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
                         <TextBlock Text="Thông tin cá nhân" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 15 30 15"></TextBlock>
                     </DockPanel>
                 </Button>
 
                 <Button x:Name="Button_Post" Style="{DynamicResource MaterialDesignRaisedButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                        Height="45" Background="#FF007ACC" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Post_Click">
+                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Post_Click">
                     <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="MessageBookmarkOutline"  Height="35" Width="35" VerticalAlignment="Center"/>
-                        <TextBlock Text="Tin bhắn" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"></TextBlock>
+                        <materialDesign:PackIcon Kind="MessageBookmarkOutline"  Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
+                        <TextBlock Text="Tin nhắn" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"></TextBlock>
                     </DockPanel>
                 </Button>
 
                 <Button x:Name="Button_Chat" Style="{DynamicResource MaterialDesignRaisedButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                        Height="45" Background="#FF007ACC" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Chat_Click">
+                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Chat_Click">
                     <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="Post" Height="25" Width="25" VerticalAlignment="Center" />
+                        <materialDesign:PackIcon Kind="Post" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
                         <TextBlock Text="Đăng bài" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"></TextBlock>
                     </DockPanel>
                 </Button>
@@ -79,16 +79,35 @@
                 <Button x:Name="Button_AddMember" Style="{DynamicResource MaterialDesignRaisedButton}"
                         materialDesign:ShadowAssist.ShadowDepth="Depth2"
                         Click="Button_AddMember_Click"
-                        Height="45" Background="#FF007ACC" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
+                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
                     <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Height="25" Width="25" VerticalAlignment="Center" />
-                        <TextBlock Text="Thêm thành viên" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15" Background="#FF007ACC"></TextBlock>
+                        <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" />
+                        <TextBlock Text="Thêm thành viên" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"/>
                     </DockPanel>
                 </Button>
             </StackPanel>
         </Grid>
 
-        <Grid Grid.Column="1" x:Name="info" Background="AliceBlue"></Grid>
+        <Grid Grid.Column="1" x:Name="info">
+            <Rectangle Height="50" VerticalAlignment="Top" Width="auto" Fill="#FF569BFF" Margin="0,0,-1.4,0"/>
+            <DockPanel Height="50" Width="250" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFD5DFDD">
+                <materialDesign:PackIcon Kind="AccountSearchOutline" Height="35" Width="35" VerticalAlignment="Center" Margin="15 0 0 0"/>
+                <TextBox Height="50" HorizontalAlignment="Right" Width="180" VerticalAlignment="Top"
+               materialDesign:HintAssist.Hint="  Tìm kiếm thành viên"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+              FontSize="18" Padding="0" Margin="0,0,14.6,0" />
+            </DockPanel>
+            <Grid  Margin="0,50,0,0" OpacityMask="White" Background="#FFDADADA">
+                <StackPanel HorizontalAlignment="Left" Height="451" Margin="60,60,0,0" VerticalAlignment="Top" Width="305" OpacityMask="#FFFFF6F6">
+                    <TextBlock TextWrapping="Wrap" Text="Họ và tên: Nguyễn Văn Thanh" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Quê quán: Hồ Chí Minh" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Ngày/tháng/năm sinh: 04/05/2001" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Khoa: KHoa học máy tính" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Ngày tham gia clb: 25/05/2019 " Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+                </StackPanel>
+                <Image Source="img/cvmau.jpeg" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15 70" Width="400"/>
+            </Grid>
+        </Grid>
         <Grid Grid.Column="1" x:Name="chat" Visibility="Collapsed" Background="Aquamarine"></Grid>
         <Grid Grid.Column="1" x:Name="post" Visibility="Collapsed" Background="Chocolate"></Grid>
         <Grid Grid.Column="1" x:Name="add" Visibility="Collapsed" Background="Cornsilk"></Grid>

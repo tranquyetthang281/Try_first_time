@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ClubSoftware"
         mc:Ignorable="d"
         Title="LoginWindow"
-        Height="500"
+        Height="550"
         Width="350"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
@@ -18,7 +18,7 @@
         FontFamily="{DynamicResource MaterialDesignFont}"
         DataContext="{StaticResource MainViewModel}">
     <Grid Background="Silver" >
-        <Rectangle Height="280" VerticalAlignment="Top">
+        <Rectangle Height="330" VerticalAlignment="Top" Margin="-1,0,1,0">
             <Rectangle.Fill>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FF064B69" Offset="0.994"/>
@@ -42,6 +42,8 @@
                   FontSize="16"/>
                 <PasswordBox x:Name="PasswordBox_Pass"
                   materialDesign:HintAssist.Hint="Mật khẩu"
+                  materialDesign:TextFieldAssist.HasClearButton="True"
+                  materialDesign:HintAssist.HelperText="Ít nhất 8 kí tự"
                   Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"
                   VerticalAlignment="Center" 
                   FontSize="16"
