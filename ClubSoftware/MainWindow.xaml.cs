@@ -26,5 +26,36 @@ namespace ClubSoftware
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.ShowDialog();
         }
+        private void Button_Post_Click(object sender, RoutedEventArgs e)
+        {
+            post.Visibility = Visibility.Visible;
+            chat.Visibility = Visibility.Collapsed;
+            info.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Chat_Click(object sender, RoutedEventArgs e)
+        {
+            post.Visibility = Visibility.Collapsed;
+            chat.Visibility = Visibility.Visible;
+            info.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_Info_Click(object sender, RoutedEventArgs e)
+        {
+            post.Visibility = Visibility.Collapsed;
+            chat.Visibility = Visibility.Collapsed;
+            info.Visibility = Visibility.Visible;
+            add.Visibility = Visibility.Collapsed;
+        }
+
+        private void Button_AddMember_Click(object sender, RoutedEventArgs e)
+        {
+            post.Visibility = Visibility.Collapsed;
+            chat.Visibility = Visibility.Collapsed;
+            info.Visibility = Visibility.Collapsed;
+            add.Visibility = Visibility.Visible;
+        }
     }
 }
