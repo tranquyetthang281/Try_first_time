@@ -22,9 +22,17 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Height="620" VerticalAlignment="Top">
+        <Grid Grid.Column="0" Height="620" VerticalAlignment="Top" >
             <Grid.Background>
-                <LinearGradientBrush EndPoint="1,0" StartPoint="1,1">
+                <LinearGradientBrush EndPoint="1,0" StartPoint="1,1" Opacity="0.8">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-364.399" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="#FFC0D7E4" Offset="1"/>
                     <GradientStop Color="#FF008DD4" Offset="0.013"/>
                 </LinearGradientBrush>
@@ -33,16 +41,17 @@
 
             <Grid HorizontalAlignment="Center" VerticalAlignment="Top"
               Width="200" Height="120" >
-                <Ellipse Width="50" Height="50" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15">
+                <Ellipse Width="45" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="img/avatarmau.jpg" />
                     </Ellipse.Fill>
                 </Ellipse>
-                <TextBlock Text="Tên người dùng" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="5"></TextBlock>
+                <Ellipse Fill="#FF25B631" Margin="71,19,119,91" RenderTransformOrigin="-0.46,0.577" ></Ellipse>
+                <TextBlock Text="Tên người dùng" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,46,15,56" Width="114"></TextBlock>
                 <Canvas>
                     <Line
-                    X1="20" Y1="120"
-                    X2="170" Y2="120"
+                    X1="30" Y1="70"
+                    X2="180" Y2="70"
                     Stroke="Black"
                     StrokeThickness="0.2"/>
                 </Canvas>
@@ -54,7 +63,7 @@
                         Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
                     <DockPanel Width="200" Height="45">
                         <materialDesign:PackIcon Kind="AccountCircle" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                        <TextBlock Text="Thông tin cá nhân" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0 15 30 15"></TextBlock>
+                        <TextBlock Text="Thông tin cá nhân" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
                     </DockPanel>
                 </Button>
 
@@ -63,7 +72,7 @@
                         Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Post_Click">
                     <DockPanel Width="200" Height="45">
                         <materialDesign:PackIcon Kind="MessageBookmarkOutline"  Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                        <TextBlock Text="Tin nhắn" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"></TextBlock>
+                        <TextBlock Text="Tin nhắn" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
                     </DockPanel>
                 </Button>
 
@@ -72,7 +81,7 @@
                         Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Chat_Click">
                     <DockPanel Width="200" Height="45">
                         <materialDesign:PackIcon Kind="Post" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                        <TextBlock Text="Đăng bài" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"></TextBlock>
+                        <TextBlock Text="Đăng bài" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
                     </DockPanel>
                 </Button>
 
@@ -82,14 +91,17 @@
                         Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
                     <DockPanel Width="200" Height="45">
                         <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" />
-                        <TextBlock Text="Thêm thành viên" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="15"/>
+                        <TextBlock Text="Thêm thành viên" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
                     </DockPanel>
                 </Button>
             </StackPanel>
         </Grid>
 
         <Grid Grid.Column="1" x:Name="info">
-            <Rectangle Height="30" VerticalAlignment="Top" Width="auto" Fill="#FF569BFF" Margin="0,0,-1.4,0"/>
+            <Canvas>
+                <Rectangle Height="30" VerticalAlignment="Top" Width="728" Fill="#FFB0CAEB"/>
+                <Image Source="img\logoteam.png" Width="593" Height="27" Canvas.Left="1" Canvas.Top="2"></Image>
+            </Canvas>
             <DockPanel Height="30" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFD5DFDD">
                 <materialDesign:PackIcon Kind="AccountSearchOutline" Height="25" Width="25" VerticalAlignment="Center" Margin="5 0 0 0"/>
                 <TextBox HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" 
@@ -97,18 +109,26 @@
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               FontSize="12" Padding="0"/>
             </DockPanel>
-            <Grid  Margin="0,30,0,0" OpacityMask="White">
+            <Grid  Margin="0,30,0,0" >
                 <Grid.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="1,1">
-                        <GradientStop Color="#FF7AB0FD" Offset="0.01"/>
-                        <GradientStop Color="#FFDAF4F3" Offset="1"/>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="678.366" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF568EE2" Offset="1"/>
+                        <GradientStop Color="#FFDAEEF4" Offset="0.433"/>
                     </LinearGradientBrush>
                 </Grid.Background>
                 <StackPanel HorizontalAlignment="Left" Height="451" Margin="60,60,0,0" VerticalAlignment="Top" Width="305" OpacityMask="#FFFFF6F6">
                     <TextBlock TextWrapping="Wrap" Text="Họ và tên: Nguyễn Văn Thanh" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
                     <TextBlock TextWrapping="Wrap" Text="Quê quán: Hồ Chí Minh" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
                     <TextBlock TextWrapping="Wrap" Text="Ngày/tháng/năm sinh: 04/05/2001" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
-                    <TextBlock TextWrapping="Wrap" Text="Khoa: KHoa học máy tính" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+                    <TextBlock TextWrapping="Wrap" Text="Khoa: Khoa học máy tính" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
                     <TextBlock TextWrapping="Wrap" Text="Ngày tham gia clb: 25/05/2019 " Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
                 </StackPanel>
                 <Image Source="img/cvmau.jpeg" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15 70" Width="400"/>
