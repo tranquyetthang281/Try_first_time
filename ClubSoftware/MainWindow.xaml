@@ -24,20 +24,20 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
             <ColumnDefinition ></ColumnDefinition>
         </Grid.ColumnDefinitions>
-        <Grid Grid.Column="0" Height="620" VerticalAlignment="Top" >
+        <Grid Grid.Column="0" Height="620" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" >
             <Grid.Background>
                 <LinearGradientBrush EndPoint="1,0" StartPoint="1,1" Opacity="0.8">
                     <LinearGradientBrush.RelativeTransform>
                         <TransformGroup>
                             <ScaleTransform CenterY="0.5" CenterX="0.5"/>
                             <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                            <RotateTransform Angle="-364.399" CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="-32.05" CenterY="0.5" CenterX="0.5"/>
                             <TranslateTransform/>
                         </TransformGroup>
                     </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="#FFC0D7E4" Offset="1"/>
                     <GradientStop Color="#FF948EFF"/>
-                    <GradientStop Color="#FFBFD6E4" Offset="0.487"/>
+                    <GradientStop Color="#FF2C4351" Offset="0.487"/>
                 </LinearGradientBrush>
             </Grid.Background>
 
@@ -68,7 +68,6 @@
                     Height="40"
                           materialDesign:ButtonAssist.CornerRadius="20"
                     Foreground="#DD000000"
-                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                     Background="#FF569BFF"
                     Padding="0">
                         <DockPanel Width="180" Height="40">
@@ -85,7 +84,6 @@
                     Height="40"
                           materialDesign:ButtonAssist.CornerRadius="20"
                     Foreground="#DD000000"
-                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                     Background="#FF569BFF"
                     Padding="0">
                         <DockPanel Width="180" Height="40">
@@ -102,7 +100,6 @@
                     Height="40"
                           materialDesign:ButtonAssist.CornerRadius="20"
                     Foreground="#DD000000"
-                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                     Background="#FF569BFF"
                     Padding="0">
                         <DockPanel Width="180" Height="40">
@@ -119,7 +116,6 @@
                     Height="40"
                           materialDesign:ButtonAssist.CornerRadius="20"
                     Foreground="#DD000000"
-                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
                     Background="#FF569BFF"
                     Padding="0">
                         <DockPanel Width="180" Height="40">
@@ -143,7 +139,14 @@
 
         <Grid Grid.Column="1" x:Name="info">
             <Canvas>
-                <Rectangle Height="30" VerticalAlignment="Top" Width="728" Fill="#7F569BFF"/>
+                <Rectangle Height="30" VerticalAlignment="Top" Width="590">
+                    <Rectangle.Fill>
+                        <RadialGradientBrush>
+                            <GradientStop Color="#FF3C4A4E" Offset="0"/>
+                            <GradientStop Color="#FF1392B1" Offset="0.522"/>
+                        </RadialGradientBrush>
+                    </Rectangle.Fill>
+                </Rectangle>
                 <Image Source="img\logoteam.png" Width="593" Height="25" Canvas.Left="-1" Canvas.Top="3" ></Image>
             </Canvas>
             <DockPanel Height="30" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFD5DFDD">
@@ -153,7 +156,24 @@
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               FontSize="12" Padding="0"/>
             </DockPanel>
-            <Grid  Margin="0,30,0,0" Background="#CCE5E5E5" >
+            <Grid  Margin="0,30,0,0" >
+                <Grid.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+                        <LinearGradientBrush.RelativeTransform>
+                            <TransformGroup>
+                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                                <RotateTransform Angle="-53.616" CenterY="0.5" CenterX="0.5"/>
+                                <TranslateTransform/>
+                            </TransformGroup>
+                        </LinearGradientBrush.RelativeTransform>
+                        <GradientStop Color="#FF72D0F3" Offset="1"/>
+                        <GradientStop Color="#FFDEF4FC" Offset="0.699"/>
+                        <GradientStop Color="#FFCDE3EB" Offset="0.442"/>
+                        <GradientStop Color="#FFE7E7E7" Offset="0.24"/>
+                        <GradientStop Color="#FFD9D9D9" Offset="0.013"/>
+                    </LinearGradientBrush>
+                </Grid.Background>
                 <StackPanel HorizontalAlignment="Left" Height="450" Margin="30,70,0,0" VerticalAlignment="Top" Width="320">
                     <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5" >
                         <DockPanel >
@@ -261,10 +281,12 @@
                     </Border>
                 </StackPanel>
                 <Canvas VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,72,101.6,0" Width="231" Height="231">
-                    <Button Panel.ZIndex="2"
+                    <Button x:Name="updrive"
+                        Panel.ZIndex="2"
                       Style="{StaticResource MaterialDesignOutlinedButton}"
                       ToolTip="MaterialDesignOutlinedButton"
                       Content="Upload CV" 
+                      Click="updrive_Click"
                     HorizontalAlignment="Right" VerticalAlignment="Top"  Height="40" Width="132" Canvas.Left="51" Canvas.Top="93"/>
                     <Rectangle VerticalAlignment="Top" HorizontalAlignment="Right" Width="231" Height="231" Fill="White"/>
                 </Canvas>

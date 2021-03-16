@@ -57,5 +57,10 @@ namespace ClubSoftware
             info.Visibility = Visibility.Collapsed;
             add.Visibility = Visibility.Visible;
         }
+
+        private void updrive_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
