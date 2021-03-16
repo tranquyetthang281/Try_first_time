@@ -16,7 +16,9 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        DataContext="{StaticResource MainViewModel}">
+        DataContext="{StaticResource MainViewModel}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -34,73 +36,115 @@
                         </TransformGroup>
                     </LinearGradientBrush.RelativeTransform>
                     <GradientStop Color="#FFC0D7E4" Offset="1"/>
-                    <GradientStop Color="#FF008DD4" Offset="0.013"/>
+                    <GradientStop Color="#FF948EFF"/>
+                    <GradientStop Color="#FFBFD6E4" Offset="0.487"/>
                 </LinearGradientBrush>
             </Grid.Background>
 
 
             <Grid HorizontalAlignment="Center" VerticalAlignment="Top"
               Width="200" Height="120" >
-                <Ellipse Width="45" Height="45" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,15,0,0">
+                <Ellipse Width="55" Height="55" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 -35 0 0">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="img/avatarmau.jpg" />
                     </Ellipse.Fill>
                 </Ellipse>
-                <Ellipse Fill="#FF25B631" Margin="71,19,119,91" RenderTransformOrigin="-0.46,0.577" ></Ellipse>
-                <TextBlock Text="Tên người dùng" FontSize="15" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,46,15,56" Width="114"></TextBlock>
+                <Ellipse Fill="#FF25B631" Height="10" Width="10" HorizontalAlignment="Center"  VerticalAlignment="Top" Margin="132,20,58,0" RenderTransformOrigin="0.4,0.64"></Ellipse>
+                <TextBlock Text="Nguyễn Văn Thanh" FontWeight="DemiBold" FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0 60 0 0"></TextBlock>
                 <Canvas>
                     <Line
-                    X1="30" Y1="70"
-                    X2="180" Y2="70"
+                    X1="30" Y1="105"
+                    X2="170" Y2="105"
                     Stroke="Black"
-                    StrokeThickness="0.2"/>
+                    StrokeThickness="0.3"/>
                 </Canvas>
             </Grid>
             <StackPanel Height="300" Width="200" VerticalAlignment="Center" >
-                <Button x:Name="Button_Info" Style="{DynamicResource MaterialDesignRaisedButton}"
-                        materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                        Click= "Button_Info_Click"
-                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
-                    <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="AccountCircle" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                        <TextBlock Text="Thông tin cá nhân" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
-                    </DockPanel>
-                </Button>
+                <Grid
+                     Width="180" Height="40" Margin="0 0 0 10">
+                    <Button
+                    Click="Button_Info_Click"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    Height="40"
+                          materialDesign:ButtonAssist.CornerRadius="20"
+                    Foreground="#DD000000"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                    Background="#FF569BFF"
+                    Padding="0">
+                        <DockPanel Width="180" Height="40">
+                            <materialDesign:PackIcon Kind="AccountCircle" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" />
+                            <TextBlock Text="Thông tin cá nhân" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
+                        </DockPanel>
+                    </Button>
+                </Grid>
+                <Grid
+                     Width="180" Height="40" Margin="0 0 0 10">
+                    <Button
+                    Click="Button_Chat_Click"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    Height="40"
+                          materialDesign:ButtonAssist.CornerRadius="20"
+                    Foreground="#DD000000"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                    Background="#FF569BFF"
+                    Padding="0">
+                        <DockPanel Width="180" Height="40">
+                            <materialDesign:PackIcon Kind="MessageBulleted" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" />
+                            <TextBlock Text="Tin nhắn" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
+                        </DockPanel>
+                    </Button>
+                </Grid>
+                <Grid
+                     Width="180" Height="40" Margin="0 0 0 10">
+                    <Button
+                    Click="Button_Post_Click"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    Height="40"
+                          materialDesign:ButtonAssist.CornerRadius="20"
+                    Foreground="#DD000000"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                    Background="#FF569BFF"
+                    Padding="0">
+                        <DockPanel Width="180" Height="40">
+                            <materialDesign:PackIcon Kind="PlusCircleOutline" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" />
+                            <TextBlock Text="Đăng bài" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
+                        </DockPanel>
+                    </Button>
+                </Grid>
+                <Grid
+                     Width="180" Height="40" Margin="0 0 0 10">
+                    <Button
+                    Click="Button_AddMember_Click"
+                    Style="{StaticResource MaterialDesignRaisedDarkButton}"
+                    Height="40"
+                          materialDesign:ButtonAssist.CornerRadius="20"
+                    Foreground="#DD000000"
+                    ToolTip="MaterialDesignRaisedDarkButton with Round Corners"
+                    Background="#FF569BFF"
+                    Padding="0">
+                        <DockPanel Width="180" Height="40">
+                            <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10 0 0 0" />
+                            <TextBlock Text="Thêm thành viên" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
+                        </DockPanel>
+                    </Button>
+                </Grid>
 
-                <Button x:Name="Button_Post" Style="{DynamicResource MaterialDesignRaisedButton}"
-                        materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Post_Click">
-                    <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="MessageBookmarkOutline"  Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                        <TextBlock Text="Tin nhắn" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
-                    </DockPanel>
-                </Button>
-
-                <Button x:Name="Button_Chat" Style="{DynamicResource MaterialDesignRaisedButton}"
-                        materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3" Click="Button_Chat_Click">
-                    <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="Post" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10"/>
-                        <TextBlock Text="Đăng bài" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"></TextBlock>
-                    </DockPanel>
-                </Button>
-
-                <Button x:Name="Button_AddMember" Style="{DynamicResource MaterialDesignRaisedButton}"
-                        materialDesign:ShadowAssist.ShadowDepth="Depth2"
-                        Click="Button_AddMember_Click"
-                        Height="45" Background="#FF569BFF" BorderBrush="#FF002793" FontSize="24" Padding="0" Margin="10 3 10 3">
-                    <DockPanel Width="200" Height="45">
-                        <materialDesign:PackIcon Kind="AccountMultiplePlusOutline" Height="25" Width="25" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10" />
-                        <TextBlock Text="Thêm thành viên" FontSize="15" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5"/>
-                    </DockPanel>
-                </Button>
             </StackPanel>
+            <Button
+                      Style="{StaticResource MaterialDesignOutlinedButton}"
+                      ToolTip="MaterialDesignOutlinedButton"
+                      Content="Đăng xuất" Background="#FF569BFF"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Bottom"
+                      Margin="62,0,62,22" Foreground="Black"
+                      Padding="5 0 5 0" Height="25"
+                      />
         </Grid>
 
         <Grid Grid.Column="1" x:Name="info">
             <Canvas>
-                <Rectangle Height="30" VerticalAlignment="Top" Width="728" Fill="#FFB0CAEB"/>
-                <Image Source="img\logoteam.png" Width="593" Height="27" Canvas.Left="1" Canvas.Top="2"></Image>
+                <Rectangle Height="30" VerticalAlignment="Top" Width="728" Fill="#7F569BFF"/>
+                <Image Source="img\logoteam.png" Width="593" Height="25" Canvas.Left="-1" Canvas.Top="3" ></Image>
             </Canvas>
             <DockPanel Height="30" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFD5DFDD">
                 <materialDesign:PackIcon Kind="AccountSearchOutline" Height="25" Width="25" VerticalAlignment="Center" Margin="5 0 0 0"/>
@@ -109,34 +153,123 @@
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
               FontSize="12" Padding="0"/>
             </DockPanel>
-            <Grid  Margin="0,30,0,0" >
-                <Grid.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
-                        <LinearGradientBrush.RelativeTransform>
-                            <TransformGroup>
-                                <ScaleTransform CenterY="0.5" CenterX="0.5"/>
-                                <SkewTransform CenterY="0.5" CenterX="0.5"/>
-                                <RotateTransform Angle="678.366" CenterY="0.5" CenterX="0.5"/>
-                                <TranslateTransform/>
-                            </TransformGroup>
-                        </LinearGradientBrush.RelativeTransform>
-                        <GradientStop Color="#FF568EE2" Offset="1"/>
-                        <GradientStop Color="#FFDAEEF4" Offset="0.433"/>
-                    </LinearGradientBrush>
-                </Grid.Background>
-                <StackPanel HorizontalAlignment="Left" Height="451" Margin="60,60,0,0" VerticalAlignment="Top" Width="305" OpacityMask="#FFFFF6F6">
-                    <TextBlock TextWrapping="Wrap" Text="Họ và tên: Nguyễn Văn Thanh" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
-                    <TextBlock TextWrapping="Wrap" Text="Quê quán: Hồ Chí Minh" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
-                    <TextBlock TextWrapping="Wrap" Text="Ngày/tháng/năm sinh: 04/05/2001" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
-                    <TextBlock TextWrapping="Wrap" Text="Khoa: Khoa học máy tính" Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
-                    <TextBlock TextWrapping="Wrap" Text="Ngày tham gia clb: 25/05/2019 " Height="40" FontSize="18" Padding="10" FontWeight="DemiBold"/>
+            <Grid  Margin="0,30,0,0" Background="#CCE5E5E5" >
+                <StackPanel HorizontalAlignment="Left" Height="450" Margin="30,70,0,0" VerticalAlignment="Top" Width="320">
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5" >
+                        <DockPanel >
+                            <Label Content="Họ và tên:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBlock FontSize="15" Text="Nguyễn Văn Thanh" Margin="5 3 5 3" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Sinh ngày" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBlock FontSize="15" Text="04/09/2001" Margin="5 3 5 3" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Quê Quán:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBlock FontSize="15" Text="Quảng Trị" Margin="5 3 5 3" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Chuyên ngành:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBlock FontSize="15" Text="Khoa học máy tính" Margin="5 3 5 3" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Số điện thoại:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBlock FontSize="15" Text="0562849764" Margin="5 3 5 3" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Ngày tham gia CLB:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBlock FontSize="15" Text="28-06-2020" Margin="5 3 5 3" VerticalAlignment="Center"></TextBlock>
+                        </DockPanel>
+                    </Border>
                 </StackPanel>
                 <Image Source="img/cvmau.jpeg" VerticalAlignment="Top" HorizontalAlignment="Right" Margin="15 70" Width="400"/>
             </Grid>
         </Grid>
-        <Grid Grid.Column="1" x:Name="chat" Visibility="Collapsed" Background="Aquamarine"></Grid>
+        <Grid Grid.Column="1" x:Name="chat" Visibility="Collapsed" Background="Aquamarine">
+
+        </Grid>
         <Grid Grid.Column="1" x:Name="post" Visibility="Collapsed" Background="Chocolate"></Grid>
-        <Grid Grid.Column="1" x:Name="add" Visibility="Collapsed" Background="Cornsilk"></Grid>
+        <Grid Grid.Column="1" x:Name="add" Visibility="Collapsed" Background="Cornsilk">
+            <Canvas>
+                <Rectangle Height="30" VerticalAlignment="Top" Width="728" Fill="#7F569BFF"/>
+                <Image Source="img\logoteam.png" Width="593" Height="25" Canvas.Left="-1" Canvas.Top="3" ></Image>
+            </Canvas>
+            <DockPanel Height="30" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFD5DFDD">
+                <materialDesign:PackIcon Kind="AccountSearchOutline" Height="25" Width="25" VerticalAlignment="Center" Margin="5 0 0 0"/>
+                <TextBox HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" 
+               materialDesign:HintAssist.Hint="  Tìm kiếm thành viên"
+             Style="{StaticResource MaterialDesignFloatingHintTextBox}"
+              FontSize="12" Padding="0"/>
+            </DockPanel>
+            <Grid  Margin="0,30,0,0" Background="#CCE5E5E5" >
+                <StackPanel HorizontalAlignment="Left" Height="450" Margin="50,70,0,0" VerticalAlignment="Top" Width="320">
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5" >
+                        <DockPanel >
+                            <Label Content="Họ và tên:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Sinh ngày" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Quê Quán:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Chuyên ngành:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Số điện thoại:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                        </DockPanel>
+                    </Border>
+
+                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                        <DockPanel >
+                            <Label Content="Ngày tham gia CLB:" FontSize="15" Margin="10 3 0 3"></Label>
+                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                        </DockPanel>
+                    </Border>
+                </StackPanel>
+                <Canvas VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,72,101.6,0" Width="231" Height="231">
+                    <Button Panel.ZIndex="2"
+                      Style="{StaticResource MaterialDesignOutlinedButton}"
+                      ToolTip="MaterialDesignOutlinedButton"
+                      Content="Upload CV" 
+                    HorizontalAlignment="Right" VerticalAlignment="Top"  Height="40" Width="132" Canvas.Left="51" Canvas.Top="93"/>
+                    <Rectangle VerticalAlignment="Top" HorizontalAlignment="Right" Width="231" Height="231" Fill="White"/>
+                </Canvas>
+            </Grid>
+        </Grid>
 
     </Grid>
 </Window>

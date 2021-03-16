@@ -16,7 +16,10 @@
         TextOptions.TextRenderingMode="Auto"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
-        DataContext="{StaticResource MainViewModel}">
+        DataContext="{StaticResource MainViewModel}"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize">
+
     <Grid Background="Silver" >
         <Rectangle Height="330" VerticalAlignment="Top" Margin="-1,0,1,0">
             <Rectangle.Fill>
