@@ -139,7 +139,7 @@
 
         <Grid Grid.Column="1" x:Name="info">
             <Canvas>
-                <Rectangle Height="30" VerticalAlignment="Top" Width="590">
+                <Rectangle Height="30" VerticalAlignment="Top" Width="594">
                     <Rectangle.Fill>
                         <RadialGradientBrush>
                             <GradientStop Color="#FF3C4A4E" Offset="0"/>
@@ -147,14 +147,14 @@
                         </RadialGradientBrush>
                     </Rectangle.Fill>
                 </Rectangle>
-                <Image Source="img\logoteam.png" Width="593" Height="25" Canvas.Left="-1" Canvas.Top="3" ></Image>
+                <Image Source="img\logoteam.png" Width="590" Height="25" Canvas.Left="-1" Canvas.Top="3" ></Image>
             </Canvas>
             <DockPanel Height="30" Width="200" HorizontalAlignment="Right" VerticalAlignment="Top" Background="#FFD5DFDD">
                 <materialDesign:PackIcon Kind="AccountSearchOutline" Height="25" Width="25" VerticalAlignment="Center" Margin="5 0 0 0"/>
                 <TextBox HorizontalAlignment="Center" Width="150" VerticalAlignment="Center" 
                materialDesign:HintAssist.Hint="  Tìm kiếm thành viên"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-              FontSize="12" Padding="0"/>
+              FontSize="10" Padding="0"/>
             </DockPanel>
             <Grid  Margin="0,30,0,0" >
                 <Grid.Background>
