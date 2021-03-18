@@ -126,7 +126,7 @@
                 </Grid>
 
             </StackPanel>
-            <Button
+            <Button   x:Name="sign_out" Click="sign_out_Click"
                       Style="{StaticResource MaterialDesignOutlinedButton}"
                       ToolTip="MaterialDesignOutlinedButton"
                       Content="Đăng xuất" Background="#FF569BFF"
@@ -238,47 +238,57 @@
             </DockPanel>
             <Grid  Margin="0,30,0,0" Background="#CCE5E5E5" >
                 <StackPanel HorizontalAlignment="Left" Height="450" Margin="50,70,0,0" VerticalAlignment="Top" Width="320">
-                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5" >
+                    <Border  BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5" >
                         <DockPanel >
                             <Label Content="Họ và tên:" FontSize="15" Margin="10 3 0 3"></Label>
-                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                            <TextBox x:Name="Ten" FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
                         </DockPanel>
                     </Border>
 
-                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                    <Border  BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
                         <DockPanel >
                             <Label Content="Sinh ngày" FontSize="15" Margin="10 3 0 3"></Label>
-                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                            <TextBox x:Name="Ngay" FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
                         </DockPanel>
                     </Border>
 
                     <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
                         <DockPanel >
                             <Label Content="Quê Quán:" FontSize="15" Margin="10 3 0 3"></Label>
-                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                            <TextBox  x:Name="Que" FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
                         </DockPanel>
                     </Border>
 
-                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                    <Border  BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
                         <DockPanel >
                             <Label Content="Chuyên ngành:" FontSize="15" Margin="10 3 0 3"></Label>
-                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                            <TextBox  x:Name="Nganh" FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
                         </DockPanel>
                     </Border>
 
-                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                    <Border  BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
                         <DockPanel >
                             <Label Content="Số điện thoại:" FontSize="15" Margin="10 3 0 3"></Label>
-                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                            <TextBox  x:Name="Phone" FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
                         </DockPanel>
                     </Border>
 
-                    <Border BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
+                    <Border  BorderBrush="#FF1555EB" BorderThickness="0.3" CornerRadius="10"  Background="#FFD8EAF1" Margin="0 0 0 5">
                         <DockPanel >
                             <Label Content="Ngày tham gia CLB:" FontSize="15" Margin="10 3 0 3"></Label>
-                            <TextBox FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
+                            <TextBox x:Name="Ngay_tg" FontSize="15"  Margin="5 3 5 3" VerticalAlignment="Center"></TextBox>
                         </DockPanel>
                     </Border>
+
+                    <DockPanel Margin="0 35 0 0">
+                        <Button x:Name="reset" Margin="0 0 35 0" Click="reset_Click"
+                      Style="{StaticResource MaterialDesignOutlinedButton}"
+                      Content="Đặt lại" BorderBrush="#FF0098AE" Foreground="Black" Background="#7F569BFF" />
+                        <Button x:Name="addtv" Click="addtv_Click"
+                      Style="{StaticResource MaterialDesignOutlinedButton}"
+                      Content="Thêm thành viên" 
+                        BorderBrush="#FF0098AE" Foreground="Black" Background="#7F569BFF"/>
+                    </DockPanel>
                 </StackPanel>
                 <Canvas VerticalAlignment="Top" HorizontalAlignment="Right" Margin="0,72,101.6,0" Width="231" Height="231">
                     <Button x:Name="updrive"

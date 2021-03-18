@@ -23,8 +23,6 @@ namespace ClubSoftware
         public MainWindow()
         {
             InitializeComponent();
-            LoginWindow loginWindow = new LoginWindow();
-            loginWindow.ShowDialog();
         }
         private void Button_Post_Click(object sender, RoutedEventArgs e)
         {
@@ -61,6 +59,33 @@ namespace ClubSoftware
         private void updrive_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void reset_Click(object sender, RoutedEventArgs e)
+        {
+            Ten.Text = "";
+            Nganh.Text = "";
+            Ngay.Text = "";
+            Ngay_tg.Text = "";
+            Phone.Text = "";
+            Que.Text = "";
+        }
+
+        private void addtv_Click(object sender, RoutedEventArgs e)
+        {
+            Ten.Text = "";
+            Nganh.Text = "";
+            Ngay.Text = "";
+            Ngay_tg.Text = "";
+            Phone.Text = "";
+            Que.Text = "";
+        }
+
+        private void sign_out_Click(object sender, RoutedEventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Show();
+            this.Close();
         }
     }
 }
