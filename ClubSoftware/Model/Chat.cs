@@ -12,9 +12,13 @@ namespace ClubSoftware.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class UserInfo
+    public partial class Chat
     {
-        public string UserName { get; set; }
-        public string Pass { get; set; }
+        public int Id { get; set; }
+        public Nullable<System.DateTime> TimePost { get; set; }
+        public string Content { get; set; }
+        public int IdUser { get; set; }
+    
+        public virtual User User { get; set; }
     }
 }

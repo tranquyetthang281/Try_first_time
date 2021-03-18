@@ -13,10 +13,10 @@ namespace ClubSoftware.Model
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class LoginDataEntities : DbContext
+    public partial class ClubSofwareDatabaseEntities : DbContext
     {
-        public LoginDataEntities()
-            : base("name=LoginDataEntities")
+        public ClubSofwareDatabaseEntities()
+            : base("name=ClubSofwareDatabaseEntities")
         {
         }
     
@@ -25,6 +25,9 @@ namespace ClubSoftware.Model
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<UserInfo> UserInfoes { get; set; }
+        public virtual DbSet<Chat> Chats { get; set; }
+        public virtual DbSet<Post> Posts { get; set; }
+        public virtual DbSet<UserRole> UserRoles { get; set; }
+        public virtual DbSet<User> Users { get; set; }
     }
 }
